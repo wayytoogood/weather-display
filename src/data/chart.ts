@@ -9,7 +9,11 @@ export const dataTypes: DataType[] = ['daily', 'hourly']
 export const dataKeys: DataKey[] = ['total', 'sql', 'xss', 'auth']
 
 const makeRandoms = (multiplier: number) => {
-  return Array.from({ length: 4 }).map((_) => Math.random() * multiplier)
+  return Array.from({ length: 4 }).map((_) => {
+    const random = Math.random()
+    if (random > 0) return Math.random() * multiplier
+    else return 0.25 * multiplier
+  })
 }
 
 const makeData = (length: number, multiplier: number) => {

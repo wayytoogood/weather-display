@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main className='grid place-items-center min-h-screen bg-slate-100'>
         <div>
-          <h1 className='bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent text-6xl font-semibold mb-28'>
+          <h1 className='bg-gradient-to-r from-emerald-600 to-teal-600 text-center bg-clip-text text-transparent text-6xl font-semibold mb-28'>
             Wellcome to the App
           </h1>
           <div className='flex justify-center gap-6'>
@@ -28,6 +28,12 @@ export default function Home() {
               className='block px-6 py-3 bg-teal-500 text-slate-100 rounded-lg shadow-lg transition-all duration-300 hover:translate-y-1 hover:shadow-sm'
             >
               Go to Windy Weather
+            </Link>
+            <Link
+              href='/alternative-weather'
+              className='block px-6 py-3 bg-teal-500 text-slate-100 rounded-lg shadow-lg transition-all duration-300 hover:translate-y-1 hover:shadow-sm'
+            >
+              Go to Alternative Weather
             </Link>
           </div>
         </div>
