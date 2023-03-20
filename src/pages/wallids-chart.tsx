@@ -106,6 +106,7 @@ const WallidsChart = () => {
                   <div className='flex gap-4 justify-center mb-8'>
                     {tabData.map(({ dataKey, label, icon }, i) => (
                       <ChartTab
+                        key={dataKey}
                         label={label}
                         icon={icon}
                         total={getTotal(data, dataKey)}
@@ -131,6 +132,7 @@ const WallidsChart = () => {
                         <div className='absolute top-full right-0 grid text-sm font-semibold bg-gray-100 border border-gray-300 text-gray-600 overflow-hidden rounded-lg z-50 opacity-0 pointer-events-none transition group-hover:opacity-100 group-hover:pointer-events-auto'>
                           {dataTypes.map((type, i) => (
                             <button
+                              key={type}
                               onClick={() => setDataType(type)}
                               className={`px-3 py-2 bg-gray-100 capitalize transition hover:bg-gray-200 ${
                                 i !== dataTypes.length - 1 &&
@@ -168,7 +170,12 @@ const WallidsChart = () => {
                         />
                         <CartesianGrid stroke='#f5f5f5' />
                         {chartData.slice(1).map(({ dataKey, color }) => (
-                          <Bar dataKey={dataKey} barSize={20} fill={color} />
+                          <Bar
+                            key={dataKey}
+                            dataKey={dataKey}
+                            barSize={20}
+                            fill={color}
+                          />
                         ))}
                         <Line
                           type='monotone'

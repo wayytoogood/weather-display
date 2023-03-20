@@ -6,7 +6,6 @@ import { interpolateViridis } from 'd3-scale-chromatic'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { cities } from '@/data/cities'
 import { Loading } from '@/components/Loading'
-import Script from 'next/script'
 import { WeatherData } from '@/types'
 import { districts } from '@/data/districts'
 

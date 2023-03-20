@@ -8,8 +8,9 @@ import {
 } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Layer } from 'leaflet'
+import { WeatherData } from '@/types'
 
-const Map: React.FC<{ data: any }> = ({ data }) => {
+const Map: React.FC<{ data: WeatherData[] }> = ({ data }) => {
   // Customize the style of the state layer
   const stateStyle = () => {
     return {
@@ -33,13 +34,13 @@ const Map: React.FC<{ data: any }> = ({ data }) => {
       style={{ height: '100vh', width: '100vw' }}
     >
       <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-      {data.map((item: any) => {
+      {data.map((item, i) => {
         const {
           coord: { lat, lon },
           main: { temp },
         } = item
         return (
-          <Marker position={[lat, lon]} opacity={0}>
+          <Marker key={i} position={[lat, lon]} opacity={0}>
             <Tooltip
               className='tooltip'
               direction='right'
