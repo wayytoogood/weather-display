@@ -4,5 +4,7 @@
 
 /alternative-weather route'unda ise leaflet haritası entegre edilmiştir.
 
+Haritalar openweathermap'in kullanım sınırını aşınca yüklenemeyebilir, onun dışında kullanımlarında bir sıkıntı yoktur.
+
 Proje Adresi: (https://weather-chart-display.netlify.app/)
 
